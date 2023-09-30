@@ -1,4 +1,36 @@
-const express = require('express')
+const express = require('express');
+const {MongoClient}=require('mongodb');
+const mongoose = require('mongoose');
+const app = express();
+
+
+// mongoose.connect("mongodb+srv://skanjarulhossain347:MHsxL99HhCYAz28n@cluster1.hrkgelw.mongodb.net/",{
+//   useNewUrlParser : true,  useUnifiedTopology :true
+// });
+
+const connectDB = async()=>{
+  try{
+    const conn  = await mongoose.connect('mongodb+srv://skanjarulhossain347:MHsxL99HhCYAz28n@cluster1.hrkgelw.mongodb.net/',{
+      useNewUrlParser = true,
+    })
+    console.log("mongoDB connected!.....");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const express = require('express')
 const app = express()
 const port = 3000
 const reqFilter = (req,res,next)=>{
@@ -55,4 +87,5 @@ app.listen(port, () => {
 
 
 
-// for view the functionality of the middlware function you need to write in the "localhost:3000/?age=20", "localhost:3000/about?age=20","localhost:3000/contact?age=20"
+// for view the functionality of the middlware function you need to write in the "localhost:3000/?age=20", "localhost:3000/about?age=20","localhost:3000/contact?age=20"*/
+
